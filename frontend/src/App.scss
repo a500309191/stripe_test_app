@@ -1,0 +1,351 @@
+::-webkit-scrollbar {
+    display: none;
+}
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+$text-color: #323232;
+$gray: #ebedf4;
+$green: #99C794;
+$red: #EC6066;
+$dark_gray: #AFB0B5;
+
+@mixin element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@mixin container ($direction: row) {
+    background: $gray;
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div * {
+    font-family: Arial;
+    color: $text-color;
+}
+
+#root {
+    display: grid;
+    grid-template-columns: 1fr 500px 1fr;
+    grid-template-rows: 100px 1fr;
+}
+.app {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.items_list_grid_window {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 15px;
+}
+
+
+
+.items_titles {
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr 110px 110px;
+    gap: 3px;
+}
+.items_titles > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebedf4;
+    opacity: 0.7;
+}
+
+
+
+
+.items_list {
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 30px;
+    max-height: 288px;
+    overflow-y: scroll;
+}
+
+.item_line {
+    display: grid;
+    grid-template-columns: 1fr 110px;
+    font-size: 20px;
+    min-height: 30px;
+    gap: 3px;
+    transition-duration: 0.3s;
+}
+
+.item_line:hover .item_name {
+    background-color: #E3E2E7;
+    opacity: 1;
+    padding-left: 20px;
+}
+.item_line:hover .item_price {
+    background-color: #E3E2E7;
+    opacity: 1;
+}
+
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 110px;
+    gap: 3px;
+    justify-content: left;
+    width: 100%;
+    text-decoration: none;
+}
+.item_price,
+.item_name {
+    display: flex;
+    width: 100%;
+    color: black;
+    align-items: center;
+    text-decoration: none;
+    background-color: $gray;
+    color: $text-color;
+    opacity: 0.6;
+    transition-duration: 0.3s;
+}
+.item_price {
+    justify-content: center;
+}
+.item_name > div{
+    margin-left: 10px
+}
+
+
+
+
+
+
+
+
+
+.buy-all_block {
+    display: grid;
+    grid-template-columns: 1fr 110px 110px;
+    gap: 3px;
+    grid-row: 3 / 4;
+    width: 100%;
+    height: 50px;
+}
+.buy-all_button,  
+.buy-all_block > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $green;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    transition-duration: 0.1s;
+}
+.buy-all_button:hover {
+    background-color: #7BA077;
+    font-size: 30px;
+}
+
+
+
+.bucket_list {
+    display: flex;
+    gap: 10px;
+    grid-row: 4 / 5;
+    height: 100%;
+    max-height: 100px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: visible;
+}
+
+.bucket_list > div {
+    display: flex;
+    gap: 3px;
+    max-height: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.bucket_list_item_name,
+.bucket_list_item_number {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    max-height: 20px;
+    background-color: $gray;
+}
+.bucket_list_item_number {
+    min-width: 20px;
+    padding: 0px;
+}
+
+
+
+
+
+
+.add_button,
+.remove_button {
+    width: 100%;
+    color: white;
+    @include element;
+}
+.add_button {
+    background-color: $dark_gray;
+}
+.remove_button {
+    background-color: $red;
+}
+
+.item_counter {
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 3px;
+}
+.item_counter > div {
+    @include element;
+}
+.plus_button,
+.minus_button {
+    min-width: 30px;
+    background-color: $dark_gray;
+    color: white;
+}
+.item_number {
+    width: 100%;
+    background-color: $gray;
+}
+
+
+.remove_button,
+.hide_item_counter,
+.hide_bucket_list_item_number {
+    display: none;
+}
+
+
+
+
+
+.item_details {
+    display: grid;
+    grid-template-rows: 50px 200px 70px 50px;
+    gap: 10px;
+}
+.item_details_name,
+.item_details_description,
+.buy_one_button,
+.back_to {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $gray;
+    width: 100%;
+}
+.item_details_name, {
+    font-size: 30px;
+    opacity: 0.8;
+}
+.item_details_description {
+    overflow-y: scroll;
+}
+.item_details_description > div{
+    margin: 20px;
+}
+.back_to,
+.buy_one_button {
+    background-color: $green;
+    color: white;
+    text-decoration: none;
+    font-size: 35px;
+    transition-duration: 0.2s;
+}
+.buy_one_button:hover {
+    background-color: #7BA077;
+    font-size: 40px;
+}
+.back_to {
+    background-color: $dark_gray;
+    font-size: 30px;
+    color: white;
+    opacity: 0.6;
+    cursor: pointer;
+    color: white;
+    opacity: 0.4;
+}
+.back_to:hover {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+.no_items,
+.page_not_found,
+.item_not_found,
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    opacity: 0.6;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    background-color: $gray;
+}
+
+.no_items,
+.page_not_found,
+.item_not_found {
+    background: linear-gradient(-70deg, #E16ADF, #BCBDC1, #BDE1B0, #BCBDC1, #E1C98D);
+    background-position: right;
+    background-size: 300% 300%;
+    animation-name: no-window;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes no-window {
+    from {background-position: 0% 100%;}
+    to {background-position: 100% 0%;}
+}
+
+.loading {
+    background: linear-gradient(70deg, #F2F2F2, #BCBDC1, #F2F2F2);
+    background-position: right;
+    background-size: 250% 250%;
+    animation-name: loading-window;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes loading-window {
+    from {background-position: 0% 100%;}
+    to {background-position: 100% 0%;}
+}

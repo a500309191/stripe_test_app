@@ -1,0 +1,148 @@
+div * {
+    font-family: Arial;
+    color: #323232;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 1fr 500px 1fr;
+    grid-template-rows: 100px 100px auto auto 60px 40px;
+    gap: 15px;
+}
+
+.payment_success,
+.payment_cancel {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.payment_success {
+    background-color: #99C794;
+}
+.payment_cancel {
+    background-color: #EC6066;
+}
+
+.items_titles {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr 110px 110px;
+    gap: 3px;
+}
+.items_titles > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebedf4;
+}
+
+
+.items_list {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 30px;
+    max-height: 288px;
+    overflow-y: scroll;
+}
+
+.item_line {
+    display: grid;
+    grid-template-columns: 1fr 110px 110px;
+    min-height: 30px;
+    gap: 3px;
+    color: #323232;
+    opacity: 0.7;
+}
+
+.item_name,
+.item_number,
+.item_price,
+.total,
+.total_number,
+.total_price {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+    background-color: #ebedf4;
+    font-size: 20px;
+}
+.item_number,
+.item_price,
+.total,
+.total_number,
+.total_price {
+    justify-content: center;
+}
+.item_name > div{
+    margin-left: 10px
+}
+
+
+.items_summary {
+    display: grid;
+    grid-template-columns: 1fr 110px 110px;
+    gap: 3px;
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
+.items_summary > div {
+    background-color: #AFB0B5;
+    color: white;
+}
+.total {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+.total_number {
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+.total_price {
+    grid-column: 3 / 4;
+    grid-row: 1;
+}
+
+
+
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2 / 3;
+    grid-row: 6;
+    color: white;
+    text-decoration: none;
+    font-size: 35px;
+    background-color: #AFB0B5;
+    font-size: 30px;
+    color: white;
+    opacity: 0.4;
+    cursor: pointer;
+    color: white;
+    transition-duration: 0.5s;
+}
+.back:hover {
+    opacity: 1;
+}
+
+
+
+

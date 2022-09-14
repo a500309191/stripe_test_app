@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PAYMENT REQUEST</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="App">
+    {% block content %}{% endblock %}
+    <div class="items_titles">
+        <div class="title_name">name:</div>
+        <div class="title_number">quantity:</div>
+        <div class="title_price">price:</div>
+    </div>
+    <div class="items_list">
+        {% for item in items %}
+            <div class="item_line">
+                <div class="item_name"><div>{{ item.name }}</div></div>
+                <div class="item_number">{{ item.quantity }}x</div>
+                <div class="item_price">{{ item.multiple_price }}</div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="items_summary">
+        <div class="total">TOTAL:</div>
+        <div class="total_number">{{ total_quantity }}x</div>
+        <div class="total_price">{{ total_price }}</div>
+    </div>
+    <a href="/" class="back">
+        BACK TO ITEMS LIST
+    </a>
+</div>
+
+</body>
+</html>
