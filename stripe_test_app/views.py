@@ -10,10 +10,10 @@ from django.conf import settings
 
 stripe.api_key = config("STRIPE_API_KEY")
 
-address = config("HOST")
 if settings.DEBUG:
     address = "localhost:8000"
-
+else: 
+    address = config("HOST")
 
 class ItemsViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Item.objects.all()
