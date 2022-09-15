@@ -3,7 +3,7 @@
 The app is a store with a list of products available for purchase via STRIPE payment service.
 
 
-task link: https://docs.google.com/document/d/1RqJhk-pRDuAk4pH1uqbY9-8uwAqEXB9eRQWLSMM_9sI/edit
+assigment link: https://docs.google.com/document/d/1RqJhk-pRDuAk4pH1uqbY9-8uwAqEXB9eRQWLSMM_9sI/edit
 
 ### The app is written using DJANGO, DJANGO REST FRAMEWORK, REACT.
 
