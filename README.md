@@ -17,7 +17,7 @@ __login/password: admin__
 1. To copy git repository to the local machine, run:
 
 ```bash
-git clone https://github.com/a500309191/stripe-test-app/blob/main/README.md
+git clone https://github.com/a500309191/stripe-test-app
 ```
 2. To install all requirements, run:
 
